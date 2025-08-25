@@ -1,0 +1,14 @@
+services:
+  - type: worker
+    name: pro-trader-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python index.py
+    region: frankfurt
+    branch: main
+    repo: https://github.com/IsmailovWD/pro_trader_bot
+    envVars:
+      - key: BOT_TOKEN
+        value: 8175394476:AAFssZqu2_-aQxjHraecgNnQu2zHZW5Fmic
+      - key: ENV
+        value: production
