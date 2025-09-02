@@ -173,7 +173,7 @@ async def comp_info(call: types.CallbackQuery):
     await call.message.answer(
         "⚠️<b>Qoida va shartlar:</b>\n"
         "1)🟠Competitionda qatnashish mutlaqo bepul, ammo balansingizni o'zingiz to'ldirasiz\n"
-        "2)🟠Balans faqat 1 marta beriladi, ya'ni 15$\n"
+        "2)🟠Balans faqat 1 marta beriladi, ya'ni 20$\n"
         "3)🟠Bozorda ishlash uchun hech qanday shart yo'q (razgon, short trade, long trade)\n"
         "4)🟠Har qanday signal kanallardan foydalanish mumkin\n"
         "5)🟠Savdoga kirish uchun maksimum lot belgilanmagan\n"
@@ -193,7 +193,7 @@ async def comp_prize(call: types.CallbackQuery):
 async def comp_join(call: types.CallbackQuery, state: FSMContext):
     btn = InlineKeyboardMarkup().add(InlineKeyboardButton("💰 Balansni to‘ldirish", callback_data="comp_pay"))
     await state.update_data(payment_type="competition")
-    await call.message.answer("🚀 <b>Musobaqada qatnashish uchun iltimos balansingizni 15$ga to‘ldiring</b>\n(1$ = 13 000 so‘m)", reply_markup=btn)
+    await call.message.answer("🚀 <b>Musobaqada qatnashish uchun iltimos balansingizni 20$ga to‘ldiring</b>\n(1$ = 13 000 so‘m)", reply_markup=btn)
 
 @dp.callback_query_handler(lambda c: c.data == "comp_pay")
 async def comp_payment(call: types.CallbackQuery, state: FSMContext):
